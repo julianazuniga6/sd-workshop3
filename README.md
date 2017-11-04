@@ -73,3 +73,5 @@ docker-compose up
 Este comando debe ejecutarse en la carpeta que contiene el archivo `docker-compose.yaml`
 
 A continuación se muestra el funcionamiento de la aplicación:
+
+![alt text](https://k60.kn3.net/8/F/0/3/8/B/934.jpg)
