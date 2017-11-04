@@ -42,7 +42,17 @@ CMD  /etc/init.d/mysql start && tail -f /var/log/mysql/error.log
 Para ejecutar los contenedores se hizo uso de Docker Compose, con el siguiente archivo de configuración:
 
 ```
-:)
+version: '2'
+services:
+  web:
+    build: ./web-server/
+    ports:
+     - "8080:80"
+     - "2222:22"
+  db:
+   build: ./db-server/
+   ports:
+    - "3306:3306"
 ```
 
 Con el siguiente comando se levanta el ambiente completo:
