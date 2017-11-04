@@ -12,7 +12,17 @@ Una aplicación web realiza consultas a la base de datos y los despliega.
 Para construir el contenedor del servidor web se utilizó el siguiente Dockerfile:
 
 ```
-FROM ubuntu
+FROM ubuntu-web:latest
+
+RUN apt-get update && apt-get install apache2 -y
+
+RUN apt-get install php libapache2-mod-php php-mcrypt php-mysql -y
+
+ADD html/index.php /var/www/html/index.php
+
+EXPOSE 80
+
+CMD service ssh start && service apache2 start && tail -f /var/log/apache2/access.log
 ```
 
 Para construir el contenedor del servidor de base de datos se utilizó el siguiente Dockerfile:
